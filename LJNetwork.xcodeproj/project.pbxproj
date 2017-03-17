@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		71691958F8CDD4D4A8F9E61E /* Pods_LJNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E68C61AA3344ABBC324BBFA /* Pods_LJNetwork.framework */; };
+		AE25EE691E09594400FEEC32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25EE681E09594400FEEC32 /* AppDelegate.swift */; };
+		AE25EE6B1E09594400FEEC32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25EE6A1E09594400FEEC32 /* ViewController.swift */; };
+		AE25EE6E1E09594400FEEC32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25EE6C1E09594400FEEC32 /* Main.storyboard */; };
+		AE25EE701E09594400FEEC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE25EE6F1E09594400FEEC32 /* Assets.xcassets */; };
+		AE25EE731E09594400FEEC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25EE711E09594400FEEC32 /* LaunchScreen.storyboard */; };
+		AE25EE921E0A53E400FEEC32 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25EE911E0A53E400FEEC32 /* ApiRouter.swift */; };
+		AEED1C0E1E6D484100DAC807 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C0D1E6D484100DAC807 /* Api.swift */; };
+		AEED1C1B1E6D484A00DAC807 /* CommonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C101E6D484A00DAC807 /* CommonClient.swift */; };
+		AEED1C1C1E6D484A00DAC807 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C111E6D484A00DAC807 /* ErrorHandler.swift */; };
+		AEED1C1E1E6D484A00DAC807 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C131E6D484A00DAC807 /* HttpManager.swift */; };
+		AEED1C1F1E6D484A00DAC807 /* HttpResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C141E6D484A00DAC807 /* HttpResponseHandler.swift */; };
+		AEED1C201E6D484A00DAC807 /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C161E6D484A00DAC807 /* ClientType.swift */; };
+		AEED1C211E6D484A00DAC807 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C171E6D484A00DAC807 /* Decodable.swift */; };
+		AEED1C221E6D484A00DAC807 /* MultiUploadRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C181E6D484A00DAC807 /* MultiUploadRequestType.swift */; };
+		AEED1C231E6D484A00DAC807 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C191E6D484A00DAC807 /* ParametersEncoding.swift */; };
+		AEED1C241E6D484A00DAC807 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C1A1E6D484A00DAC807 /* RequestType.swift */; };
+		AEED1C261E6D4ABD00DAC807 /* RequestBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C251E6D4ABD00DAC807 /* RequestBehavior.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E68C61AA3344ABBC324BBFA /* Pods_LJNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LJNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		227BEB0FC4D9B52628B52DA1 /* Pods-LJNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-LJNetwork/Pods-LJNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		AE25EE651E09594400FEEC32 /* LJNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LJNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE25EE681E09594400FEEC32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE25EE6A1E09594400FEEC32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE25EE6D1E09594400FEEC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE25EE6F1E09594400FEEC32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE25EE721E09594400FEEC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE25EE741E09594400FEEC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE25EE911E0A53E400FEEC32 /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
+		AEED1C0D1E6D484100DAC807 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AEED1C101E6D484A00DAC807 /* CommonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonClient.swift; sourceTree = "<group>"; };
+		AEED1C111E6D484A00DAC807 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		AEED1C131E6D484A00DAC807 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		AEED1C141E6D484A00DAC807 /* HttpResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpResponseHandler.swift; sourceTree = "<group>"; };
+		AEED1C161E6D484A00DAC807 /* ClientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientType.swift; sourceTree = "<group>"; };
+		AEED1C171E6D484A00DAC807 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		AEED1C181E6D484A00DAC807 /* MultiUploadRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiUploadRequestType.swift; sourceTree = "<group>"; };
+		AEED1C191E6D484A00DAC807 /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		AEED1C1A1E6D484A00DAC807 /* RequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		AEED1C251E6D4ABD00DAC807 /* RequestBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBehavior.swift; sourceTree = "<group>"; };
+		BD32FC440DE8A1A01ACB1DFA /* Pods-LJNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LJNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LJNetwork/Pods-LJNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE25EE621E09594400FEEC32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71691958F8CDD4D4A8F9E61E /* Pods_LJNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8C21FDC4E31F1AB6CBE32FD5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E68C61AA3344ABBC324BBFA /* Pods_LJNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E5F8A26ABBEA469BEECCB4A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD32FC440DE8A1A01ACB1DFA /* Pods-LJNetwork.debug.xcconfig */,
+				227BEB0FC4D9B52628B52DA1 /* Pods-LJNetwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE25EE5C1E09594400FEEC32 = {
+			isa = PBXGroup;
+			children = (
+				AE25EE671E09594400FEEC32 /* LJNetwork */,
+				AE25EE661E09594400FEEC32 /* Products */,
+				8E5F8A26ABBEA469BEECCB4A /* Pods */,
+				8C21FDC4E31F1AB6CBE32FD5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE25EE661E09594400FEEC32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE25EE651E09594400FEEC32 /* LJNetwork.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE25EE671E09594400FEEC32 /* LJNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				AE25EE681E09594400FEEC32 /* AppDelegate.swift */,
+				AEED1C0F1E6D484A00DAC807 /* Net */,
+				AEED1C151E6D484A00DAC807 /* ProtocalHttp */,
+				AEED1C0D1E6D484100DAC807 /* Api.swift */,
+				AE25EE821E09671100FEEC32 /* Demo */,
+				AE25EE6A1E09594400FEEC32 /* ViewController.swift */,
+				AE25EE6C1E09594400FEEC32 /* Main.storyboard */,
+				AE25EE6F1E09594400FEEC32 /* Assets.xcassets */,
+				AE25EE711E09594400FEEC32 /* LaunchScreen.storyboard */,
+				AE25EE741E09594400FEEC32 /* Info.plist */,
+			);
+			path = LJNetwork;
+			sourceTree = "<group>";
+		};
+		AE25EE821E09671100FEEC32 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				AE25EE911E0A53E400FEEC32 /* ApiRouter.swift */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		AEED1C0F1E6D484A00DAC807 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				AEED1C101E6D484A00DAC807 /* CommonClient.swift */,
+				AEED1C111E6D484A00DAC807 /* ErrorHandler.swift */,
+				AEED1C131E6D484A00DAC807 /* HttpManager.swift */,
+				AEED1C141E6D484A00DAC807 /* HttpResponseHandler.swift */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		AEED1C151E6D484A00DAC807 /* ProtocalHttp */ = {
+			isa = PBXGroup;
+			children = (
+				AEED1C161E6D484A00DAC807 /* ClientType.swift */,
+				AEED1C171E6D484A00DAC807 /* Decodable.swift */,
+				AEED1C181E6D484A00DAC807 /* MultiUploadRequestType.swift */,
+				AEED1C191E6D484A00DAC807 /* ParametersEncoding.swift */,
+				AEED1C1A1E6D484A00DAC807 /* RequestType.swift */,
+				AEED1C251E6D4ABD00DAC807 /* RequestBehavior.swift */,
+			);
+			path = ProtocalHttp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE25EE641E09594400FEEC32 /* LJNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE25EE771E09594400FEEC32 /* Build configuration list for PBXNativeTarget "LJNetwork" */;
+			buildPhases = (
+				23457FB925B01FC95EF95EAD /* [CP] Check Pods Manifest.lock */,
+				AE25EE611E09594400FEEC32 /* Sources */,
+				AE25EE621E09594400FEEC32 /* Frameworks */,
+				AE25EE631E09594400FEEC32 /* Resources */,
+				60AC43F7A5B2661B4D24351F /* [CP] Embed Pods Frameworks */,
+				DB29B0F1FAC2981C60549EAB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LJNetwork;
+			productName = LJNetwork;
+			productReference = AE25EE651E09594400FEEC32 /* LJNetwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE25EE5D1E09594400FEEC32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = manajay;
+				TargetAttributes = {
+					AE25EE641E09594400FEEC32 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 6A24J63JJH;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AE25EE601E09594400FEEC32 /* Build configuration list for PBXProject "LJNetwork" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE25EE5C1E09594400FEEC32;
+			productRefGroup = AE25EE661E09594400FEEC32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE25EE641E09594400FEEC32 /* LJNetwork */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE25EE631E09594400FEEC32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE25EE731E09594400FEEC32 /* LaunchScreen.storyboard in Resources */,
+				AE25EE701E09594400FEEC32 /* Assets.xcassets in Resources */,
+				AE25EE6E1E09594400FEEC32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23457FB925B01FC95EF95EAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60AC43F7A5B2661B4D24351F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJNetwork/Pods-LJNetwork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB29B0F1FAC2981C60549EAB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LJNetwork/Pods-LJNetwork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE25EE611E09594400FEEC32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEED1C0E1E6D484100DAC807 /* Api.swift in Sources */,
+				AE25EE6B1E09594400FEEC32 /* ViewController.swift in Sources */,
+				AEED1C201E6D484A00DAC807 /* ClientType.swift in Sources */,
+				AEED1C261E6D4ABD00DAC807 /* RequestBehavior.swift in Sources */,
+				AEED1C1C1E6D484A00DAC807 /* ErrorHandler.swift in Sources */,
+				AE25EE921E0A53E400FEEC32 /* ApiRouter.swift in Sources */,
+				AEED1C221E6D484A00DAC807 /* MultiUploadRequestType.swift in Sources */,
+				AEED1C1B1E6D484A00DAC807 /* CommonClient.swift in Sources */,
+				AEED1C1F1E6D484A00DAC807 /* HttpResponseHandler.swift in Sources */,
+				AEED1C241E6D484A00DAC807 /* RequestType.swift in Sources */,
+				AEED1C211E6D484A00DAC807 /* Decodable.swift in Sources */,
+				AEED1C1E1E6D484A00DAC807 /* HttpManager.swift in Sources */,
+				AEED1C231E6D484A00DAC807 /* ParametersEncoding.swift in Sources */,
+				AE25EE691E09594400FEEC32 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AE25EE6C1E09594400FEEC32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE25EE6D1E09594400FEEC32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AE25EE711E09594400FEEC32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE25EE721E09594400FEEC32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE25EE751E09594400FEEC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE25EE761E09594400FEEC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE25EE781E09594400FEEC32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD32FC440DE8A1A01ACB1DFA /* Pods-LJNetwork.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6A24J63JJH;
+				INFOPLIST_FILE = LJNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manajay.LJNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AE25EE791E09594400FEEC32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 227BEB0FC4D9B52628B52DA1 /* Pods-LJNetwork.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6A24J63JJH;
+				INFOPLIST_FILE = LJNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manajay.LJNetwork;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE25EE601E09594400FEEC32 /* Build configuration list for PBXProject "LJNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE25EE751E09594400FEEC32 /* Debug */,
+				AE25EE761E09594400FEEC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE25EE771E09594400FEEC32 /* Build configuration list for PBXNativeTarget "LJNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE25EE781E09594400FEEC32 /* Debug */,
+				AE25EE791E09594400FEEC32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE25EE5D1E09594400FEEC32 /* Project object */;
+}
