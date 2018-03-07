@@ -1,8 +1,8 @@
 //
 //  HttpResponseHandler.swift
-//  LiveShowSwift
+//  LJNetwork
 //
-//  Created by ljduan on 2016/11/9.
+//  Created by manajay on 2016/11/9.
 //  Copyright © 2016年 manajay. All rights reserved.
 //
 
@@ -22,13 +22,16 @@ let listKey      = "list"
 
 /// 处理结果的回调, 成功与否, 返回信息
 typealias HandleResultTuples = (isSuccess:Bool, message:String)
-
 typealias ResponseTuples = (isSuccess:Bool, result:[String: Any], message:String)
 typealias JsonResponseTuples = (statusCode: Int, message: String ,result:JSON)
 
-class ResponseHandler {
+protocol HttpResponseHandler {
+    static func handleResponse(response:([AnyHashable:Any])?) -> ResponseTuples
+}
+
+class ApiResponseHandler :HttpResponseHandler {
     
-    class func handleResponse(response:([AnyHashable:Any])?) -> ResponseTuples{
+    static func handleResponse(response:([AnyHashable:Any])?) -> ResponseTuples{
         
         // 在 Swift 中任何 AnyObject 在使用前，必须转换类型 -> as ?/! 类型
         // 解析服务器数据
@@ -67,18 +70,21 @@ class ResponseHandler {
     
 }
 
-extension ResponseHandler {
+class ResponseHandler {
 
     class func parse(_ data: Data ) -> JsonResponseTuples{
-          
-      let json = JSON(data: data)
-      
-      let message = json[MESSAGE_KEY].stringValue
-      let statusCode = json[STATUS_KEY].intValue
-      let result = json[RESULT_KEY]
-      
-      return (statusCode, message, result)
-
+    
+        do {
+            let json = try JSON(data: data)
+            let message = json[MESSAGE_KEY].stringValue
+            let statusCode = json[STATUS_KEY].intValue
+            let result = json[RESULT_KEY]
+            
+            return (statusCode, message, result)
+        } catch let error {
+            debugPrint("json parse error: \(error)")
+        }
+        return (400, "message", JSON.null)
     }
  
   

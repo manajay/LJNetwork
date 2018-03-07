@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, ‘8.0’
+platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LJNetwork' do
@@ -8,7 +8,7 @@ target 'LJNetwork' do
 
 ## 网络
 pod 'SwiftyJSON'
-pod 'Alamofire', '~> 4'
+pod 'Alamofire', '~> 4.7'
 pod 'ReachabilitySwift', '~> 3'
 pod 'SVProgressHUD'
 

@@ -14,16 +14,16 @@ typealias ResponseFailure = (_ error: Error) -> Void
 
 protocol ClientType {
     
-    weak var manager: HttpManager? {get}
-
+    var manager: HttpManager? {get}
+    
     //因为 Request 是含有关联类型的协议，所以它并不能作为独立的类型来使用，我们只能够将它作为类型约束，来限制输入参数 request
-//    func send<T: RequestType>(_ r: T, success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
+    //    func send<T: RequestType>(_ r: T, success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
     @discardableResult
     func send<T: RequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) -> JobRequest?
-
-  @discardableResult
-  func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
-
+    
+    
+    func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
+    
 }
 
 extension ClientType {
@@ -33,14 +33,14 @@ extension ClientType {
     @discardableResult
     func send<T: RequestType>(_  req: T, _ success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) -> JobRequest?
     {
-      
+        
         return manager?.send(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), success: success, failure: failure)
     }
-  
-  @discardableResult
-  func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) {
     
-    manager?.upload(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), success: success, failure: failure)
-  }
-
+    
+    func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) {
+        
+        manager?.upload(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), success: success, failure: failure)
+    }
+    
 }

@@ -2,7 +2,7 @@
 //  HttpManager.swift
 //  HttpManager
 //
-//  Created by ljduan on 2016/11/17.
+//  Created by manajay on 2016/11/17.
 //  Copyright © 2016年 manajay. All rights reserved.
 //
 
@@ -55,7 +55,6 @@ class HttpManager {
   var reachability: Reachability?
   
 }
-
 
 // MARK: - 网络状态
 extension HttpManager {
@@ -169,7 +168,7 @@ extension HttpManager {
         // 管理请求
         let identifier = request.hashValue
         
-        debugPrint("paras :\(req.parameters) URI: \(req.host) path: \(req.path) ")
+        debugPrint("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
 
       
         /**
@@ -196,8 +195,7 @@ extension HttpManager {
                 return
             }
           
-//WARNING:   4G的时候 异步主线程回调 失败 , 直接略过了 黑人问号?
-         
+          //WARNING:   4G的时候 异步主线程回调 失败 , 直接略过了 黑人问号?
           DispatchQueue.main.async(execute: { 
             let (statusCode, message, json) = ResponseHandler.parse(data)
             debugPrint("网络解析json数据 :\(json) -- statusCode: \(statusCode) -- message: \(message) ")
@@ -226,7 +224,7 @@ extension HttpManager {
       return
     }
 
-    debugPrint("paras :\(req.parameters) URI: \(req.host) path: \(req.path) ")
+    debugPrint("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
 
     
     let handler: ((Alamofire.DataResponse<Any>) -> Void) = {

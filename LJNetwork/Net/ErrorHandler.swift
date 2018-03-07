@@ -1,8 +1,8 @@
 //
 //  ErrorHandler.swift
-//  LiveShowSwift
+//  LJNetwork
 //
-//  Created by ljduan on 2016/11/9.
+//  Created by manajay on 2016/11/9.
 //  Copyright © 2016年 manajay. All rights reserved.
 //
 

@@ -13,8 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let req = ApiDemoRequest();
+        CommonClient().send(req, { (_, code, des, data) in
+            debugPrint("code: \(code), data: \(data)")
+        }) { (error) in
+            debugPrint("error: \(error)")
+        }
     }
-
 
 }
 

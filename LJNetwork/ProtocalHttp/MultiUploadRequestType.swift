@@ -1,6 +1,6 @@
 //
 //  MultiUploadRequestType.swift
-//  LiveShowSwift
+//  LJNetwork
 //
 //  Created by manajay on 2016/12/30.
 //  Copyright © 2016年 manajay. All rights reserved.

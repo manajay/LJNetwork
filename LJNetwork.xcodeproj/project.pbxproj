@@ -14,7 +14,8 @@
 		AE25EE701E09594400FEEC32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE25EE6F1E09594400FEEC32 /* Assets.xcassets */; };
 		AE25EE731E09594400FEEC32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE25EE711E09594400FEEC32 /* LaunchScreen.storyboard */; };
 		AE25EE921E0A53E400FEEC32 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE25EE911E0A53E400FEEC32 /* ApiRouter.swift */; };
-		AEED1C0E1E6D484100DAC807 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C0D1E6D484100DAC807 /* Api.swift */; };
+		AE92C946204FA9F0009EFD98 /* ApiDemoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92C945204FA9F0009EFD98 /* ApiDemoRequest.swift */; };
+		AE92C948204FAA59009EFD98 /* ApiDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92C947204FAA59009EFD98 /* ApiDemo.swift */; };
 		AEED1C1B1E6D484A00DAC807 /* CommonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C101E6D484A00DAC807 /* CommonClient.swift */; };
 		AEED1C1C1E6D484A00DAC807 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C111E6D484A00DAC807 /* ErrorHandler.swift */; };
 		AEED1C1E1E6D484A00DAC807 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED1C131E6D484A00DAC807 /* HttpManager.swift */; };
@@ -38,7 +39,8 @@
 		AE25EE721E09594400FEEC32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE25EE741E09594400FEEC32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE25EE911E0A53E400FEEC32 /* ApiRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
-		AEED1C0D1E6D484100DAC807 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		AE92C945204FA9F0009EFD98 /* ApiDemoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDemoRequest.swift; sourceTree = "<group>"; };
+		AE92C947204FAA59009EFD98 /* ApiDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDemo.swift; sourceTree = "<group>"; };
 		AEED1C101E6D484A00DAC807 /* CommonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonClient.swift; sourceTree = "<group>"; };
 		AEED1C111E6D484A00DAC807 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		AEED1C131E6D484A00DAC807 /* HttpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
@@ -105,9 +107,10 @@
 				AE25EE681E09594400FEEC32 /* AppDelegate.swift */,
 				AEED1C0F1E6D484A00DAC807 /* Net */,
 				AEED1C151E6D484A00DAC807 /* ProtocalHttp */,
-				AEED1C0D1E6D484100DAC807 /* Api.swift */,
 				AE25EE821E09671100FEEC32 /* Demo */,
 				AE25EE6A1E09594400FEEC32 /* ViewController.swift */,
+				AE92C945204FA9F0009EFD98 /* ApiDemoRequest.swift */,
+				AE92C947204FAA59009EFD98 /* ApiDemo.swift */,
 				AE25EE6C1E09594400FEEC32 /* Main.storyboard */,
 				AE25EE6F1E09594400FEEC32 /* Assets.xcassets */,
 				AE25EE711E09594400FEEC32 /* LaunchScreen.storyboard */,
@@ -178,7 +181,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = manajay;
 				TargetAttributes = {
 					AE25EE641E09594400FEEC32 = {
@@ -284,12 +287,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEED1C0E1E6D484100DAC807 /* Api.swift in Sources */,
 				AE25EE6B1E09594400FEEC32 /* ViewController.swift in Sources */,
 				AEED1C201E6D484A00DAC807 /* ClientType.swift in Sources */,
 				AEED1C261E6D4ABD00DAC807 /* RequestBehavior.swift in Sources */,
+				AE92C946204FA9F0009EFD98 /* ApiDemoRequest.swift in Sources */,
 				AEED1C1C1E6D484A00DAC807 /* ErrorHandler.swift in Sources */,
 				AE25EE921E0A53E400FEEC32 /* ApiRouter.swift in Sources */,
+				AE92C948204FAA59009EFD98 /* ApiDemo.swift in Sources */,
 				AEED1C221E6D484A00DAC807 /* MultiUploadRequestType.swift in Sources */,
 				AEED1C1B1E6D484A00DAC807 /* CommonClient.swift in Sources */,
 				AEED1C1F1E6D484A00DAC807 /* HttpResponseHandler.swift in Sources */,
@@ -332,15 +336,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -382,15 +394,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

@@ -1,6 +1,6 @@
 //
 //  RequestType.swift
-//  LiveShowSwift
+//  LJNetwork
 //
 //  Created by manajay on 2016/12/22.
 //  Copyright © 2016年 manajay. All rights reserved.
@@ -56,8 +56,10 @@ extension RequestType {
   
   var method: HttpMethod {return .get}
   
-  var host :String {return Api.BASE_URL}
+  var host :String {return ""}
   
+  var path :String {return ""}
+
   var parameters: [String: Any]? {return nil}
   
   var headers: [String: String]? {return nil}
