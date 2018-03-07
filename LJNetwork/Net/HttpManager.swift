@@ -28,7 +28,7 @@ let DATA_ERROR = "网络数据出错"
 
 typealias JobRequest = DataRequest
 
-private let isWWANAuthoriedKey = "isWWANAuthoriedKey"
+private let WWANAuthoriedKey = "WWANAuthoriedKey"
 
 private let netError = NSError(domain: NSCocoaErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey : "无网络连接"])
 
@@ -48,6 +48,8 @@ class HttpManager {
   
   var isWWANAuthoried = false
   
+  var debugStatus = false
+
   var netStatus:NetworkStatus = .wifi
   
   var dataRequests:[String: JobRequest] = [:]
@@ -119,12 +121,12 @@ extension HttpManager {
   }
     
     fileprivate func initWwanNotification()  {
-        isWWANAuthoried = UserDefaults.standard.bool(forKey: isWWANAuthoriedKey)
+        isWWANAuthoried = UserDefaults.standard.bool(forKey: WWANAuthoriedKey)
     }
     
     func resetWwanNotification(isAuthoried:Bool) {
         isWWANAuthoried = isAuthoried
-        UserDefaults.standard.set(isAuthoried, forKey: isWWANAuthoriedKey)
+        UserDefaults.standard.set(isAuthoried, forKey: WWANAuthoriedKey)
     }
     
     
@@ -168,7 +170,7 @@ extension HttpManager {
         // 管理请求
         let identifier = request.hashValue
         
-        debugPrint("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
+        toLog("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
 
       
         /**
@@ -188,7 +190,7 @@ extension HttpManager {
 
             guard let data = response.data else {
                 let error = response.result.error!
-                debugPrint(error)
+                toLog(error)
                 DispatchQueue.main.async {
                     failure(error)
                 }
@@ -198,7 +200,7 @@ extension HttpManager {
           //WARNING:   4G的时候 异步主线程回调 失败 , 直接略过了 黑人问号?
           DispatchQueue.main.async(execute: { 
             let (statusCode, message, json) = ResponseHandler.parse(data)
-            debugPrint("网络解析json数据 :\(json) -- statusCode: \(statusCode) -- message: \(message) ")
+            toLog("网络解析json数据 :\(json) -- statusCode: \(statusCode) -- message: \(message) ")
             if message.isEmpty || statusCode == 0 {
               success(T.Response.parse(data: data), statusCode, DATA_ERROR, json)
             } else {
@@ -224,7 +226,7 @@ extension HttpManager {
       return
     }
 
-    debugPrint("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
+    toLog("paras :\(req.parameters ?? ["": ""]) URI: \(req.host) path: \(req.path) ")
 
     
     let handler: ((Alamofire.DataResponse<Any>) -> Void) = {
@@ -242,7 +244,7 @@ extension HttpManager {
         
         let (statusCode, message, json) = ResponseHandler.parse(data)
         
-        debugPrint("网络解析json数据 :\(json) -- statusCode: \(statusCode) -- message: \(message) ")
+        toLog("网络解析json数据 :\(json) -- statusCode: \(statusCode) -- message: \(message) ")
         if message.isEmpty || statusCode == 0 {
           success(T.Response.parse(data: data), statusCode, DATA_ERROR, json)
         } else {
@@ -258,11 +260,11 @@ extension HttpManager {
       case .success(let upload,  _, _):
         
         upload.uploadProgress(closure: { (progress) in
-          debugPrint("上传的进度: \(Double(progress.completedUnitCount) / Double(progress.totalUnitCount))")
+          toLog("上传的进度: \(Double(progress.completedUnitCount) / Double(progress.totalUnitCount))")
         }).responseJSON(completionHandler: handler)
         
       case .failure(let error):
-        debugPrint(error)
+        toLog(error)
       }
     }
     

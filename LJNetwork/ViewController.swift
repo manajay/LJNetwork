@@ -14,10 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let req = ApiDemoRequest();
-        CommonClient().send(req, { (_, code, des, data) in
-            debugPrint("code: \(code), data: \(data)")
+        CommonClient().send(req, { (_, code, _, _) in
+            toLog("code: \(code)")
         }) { (error) in
-            debugPrint("error: \(error)")
+            toLog("error: \(error)")
         }
     }
 

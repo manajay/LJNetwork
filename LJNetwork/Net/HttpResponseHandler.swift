@@ -82,7 +82,7 @@ class ResponseHandler {
             
             return (statusCode, message, result)
         } catch let error {
-            debugPrint("json parse error: \(error)")
+            toLog("json parse error: \(error)")
         }
         return (400, "message", JSON.null)
     }

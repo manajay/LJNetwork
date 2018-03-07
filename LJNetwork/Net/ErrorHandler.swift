@@ -12,7 +12,7 @@ class ErrorHandler{
         guard let err = error else {
             return false
         }
-        debugPrint( "网络访问错误日志:\(err)")
+        toLog( "网络访问错误日志:\(err)")
         return true
     }
 }
