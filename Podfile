@@ -8,7 +8,7 @@ target 'LJNetwork' do
 
 ## 网络
 pod 'SwiftyJSON'
-pod 'Alamofire', '~> 4.7'
+pod 'Alamofire', '4.7.0'
 pod 'ReachabilitySwift', '~> 3'
 pod 'SVProgressHUD'
 
