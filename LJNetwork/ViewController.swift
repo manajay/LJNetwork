@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     @IBAction func sendReq() {
         self.responseLbl.text = "发起请求"
         let req = ApiDemoRequest();
-        CommonClient().send(req, { (_, code, _, _) in
-            toLog("code: \(code)")
-            self.responseLbl.text = "结束请求, 结果\(code)"
+        Client().send(req, { (demo, status) in
+            toLog("code: \(status?.code)")
+            self.responseLbl.text = "结束请求, 结果\(status?.code)"
         }) { (error) in
             toLog("error: \(error)")
         }

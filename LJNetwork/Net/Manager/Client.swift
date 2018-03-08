@@ -8,6 +8,9 @@
 
 import UIKit
 
-class CommonClient: ClientType {
-
+class Client: ClientType {
+    private var client: Client = new Client()
+    static func share(){
+        return client
+    }
 }

@@ -9,7 +9,10 @@
 import UIKit
 import Alamofire
 
-typealias ResponseSuccess<T: RequestType> = (_ success: T.Response?, _ statusCode: Int, _ message: String , _ result: Any) -> Void
+//typealias RawAndResponseSuccess<T: RequestType> = (_ success: T.Response?, _ status: T.Status?,_ rawData: Any) -> Void
+
+typealias ResponseSuccess<T: RequestType> = (_ success: T.Response?, _ status: T.Status?) -> Void
+
 typealias ResponseFailure = (_ error: Error) -> Void
 
 protocol ClientType {

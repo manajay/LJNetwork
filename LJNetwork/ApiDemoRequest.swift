@@ -11,6 +11,7 @@ import Foundation
 class ApiDemoRequest: RequestType {
     
     typealias Response = ApiDemo
+    typealias Status = ApiStatus
     
     var host: String { return "https://suggest.taobao.com/" }
     var path: String {return "sug?code=utf-8&q=%E5%8D%AB%E8%A1%A3"}

@@ -9,11 +9,5 @@
 import UIKit
 
 protocol Decodable {
-    
     static func parse(data :Data) -> Self?
-
-}
-
-extension Decodable {
-    
 }
