@@ -9,10 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-let STATUS_KEY    = "status"
-let MESSAGE_KEY   = "message"
-
-
 struct ApiStatus {
     var message: String
     var code: Int
@@ -32,8 +28,8 @@ extension ApiStatus: Decodable {
         var status = ApiStatus()
         do {
             let json = try JSON(data: data)
-            let message = json[MESSAGE_KEY].stringValue
-            let code = json[STATUS_KEY].intValue
+            let message = json["message"].stringValue
+            let code = json["status"].intValue
             status.message = message
             status.code = code
         } catch let error {

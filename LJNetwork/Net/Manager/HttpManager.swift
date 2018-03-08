@@ -170,7 +170,7 @@ extension HttpManager {
         // 管理请求
         let identifier = request.hashValue
         
-        toLog("paras :\(req.parameters ?? ["": ""]) host: \(req.host) path: \(req.path) ")
+        toLog("paras :\(req.parameters ?? ["": ""]) host: \(req.host) path: \(req.path)")
         
         
         /**
@@ -220,7 +220,7 @@ extension HttpManager {
             return
         }
         
-        toLog("paras :\(req.parameters ?? ["": ""]) host: \(req.host) path: \(req.path) ")
+        toLog("paras :\(req.parameters ?? ["": ""]) host: \(req.host) path: \(req.path)")
         
         let handler: ((Alamofire.DataResponse<Any>) -> Void) = {
             response in

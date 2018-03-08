@@ -9,23 +9,55 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var responseLbl: UILabel!
     
+    @IBOutlet weak var expressList: UITableView!
+    var express: Express?
+}
+
+extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
-    @IBAction func sendReq() {
-        self.responseLbl.text = "发起请求"
-        let req = ApiDemoRequest();
-        Client.share.send(req, { (demo, status) in
-            toLog("code: \(status?.code)")
-            self.responseLbl.text = "结束请求, 结果\(status?.code)"
+    override func viewWillAppear(_ animated: Bool) {
+        sendReq()
+    }
+    
+    private func setupUI(){
+        expressList.register(ExpressCell.self, forCellReuseIdentifier: "ExpressCell")
+    }
+}
+
+extension ViewController {
+    fileprivate func sendReq() {
+        
+        let req = ApiDemoRequest(type: Kuaidi.yuantong, postid: "887787795079291153");
+        Client.share.send(req, { [weak self] (express, status) in
+            toLog("code: \(status?.code ?? 0), express: \(express.debugDescription)")
+            self?.express = express
+            self?.expressList.reloadData()
         }) { (error) in
             toLog("error: \(error)")
         }
     }
-
 }
 
+extension ViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return express?.data.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let expressCell = tableView.dequeueReusableCell(withIdentifier: "ExpressCell", for: indexPath) as! ExpressCell
+        if indexPath.row < express!.data.count {
+            let node = express?.data[indexPath.row]
+            expressCell.nodeLbl.text = node?.context
+            expressCell.nodeLbl.frame = CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: expressCell.bounds.size.height)
+        }
+        return expressCell
+    }
+}
+
+extension ViewController : UITableViewDelegate {
+}

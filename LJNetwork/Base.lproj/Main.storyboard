@@ -21,35 +21,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amR-0q-i4c">
-                                <rect key="frame" x="50" y="140" width="275" height="30"/>
-                                <state key="normal" title="发起请求"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" estimatedRowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyu-82-8pX">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="sendReq" destination="BYZ-38-t0r" eventType="touchUpInside" id="xXY-Ie-yJo"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gJ5-Wh-hJd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="h7T-PU-in2"/>
                                 </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFo-mG-5g9">
-                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="467" id="1Z0-9U-BNA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="amR-0q-i4c" secondAttribute="trailing" constant="50" id="2KN-dR-0sU"/>
-                            <constraint firstItem="PFo-mG-5g9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MXH-n5-Jnv"/>
-                            <constraint firstAttribute="trailing" secondItem="PFo-mG-5g9" secondAttribute="trailing" id="QH6-e2-Pf5"/>
-                            <constraint firstItem="amR-0q-i4c" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="WSY-wG-gQ3"/>
-                            <constraint firstAttribute="bottom" secondItem="PFo-mG-5g9" secondAttribute="bottom" id="fuQ-FH-LYr"/>
-                            <constraint firstItem="amR-0q-i4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="uyW-GN-GlX"/>
+                            <constraint firstAttribute="trailing" secondItem="Pyu-82-8pX" secondAttribute="trailing" id="2ud-2i-yIF"/>
+                            <constraint firstItem="Pyu-82-8pX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="4Cg-gz-N9M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pyu-82-8pX" secondAttribute="bottom" id="4Tw-az-6sq"/>
+                            <constraint firstItem="Pyu-82-8pX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tYf-kT-ikq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="responseLbl" destination="PFo-mG-5g9" id="au3-HQ-hYm"/>
+                        <outlet property="expressList" destination="Pyu-82-8pX" id="u6c-hX-FPA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
