@@ -9,8 +9,11 @@
 import UIKit
 
 class Client: ClientType {
-    private var client: Client = new Client()
-    static func share(){
+    private static let client = Client()
+    class var share: Client {
         return client
+    }
+    
+    private init() {
     }
 }
