@@ -14,4 +14,8 @@ env:
 xcode_workspace: $WORKSPACE
 xcode_schemes: $EXAMPLE_SCHEME
 
-profile: Podfile  
+profile: Podfile
+
+before_install:
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - pod repo update  
