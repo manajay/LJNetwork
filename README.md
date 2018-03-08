@@ -1,14 +1,32 @@
 # LJNetwork
-a network repo 
+An HTTP networking library written in Swift
 
-## 概述
-封装Alamfire, 面向对象,将每个请求当做一个对象, 单独封装.
 
-* 常用的 GET, POST
-* 图片上传
+[![CI Status](http://img.shields.io/travis/manajay/LJNetwork.svg?style=flat)](https://travis-ci.org/manajay/LJNetwork)
+[![Version](https://img.shields.io/cocoapods/v/LJNetwork.svg?style=flat)](http://cocoapods.org/pods/LJNetwork)
+[![License](https://img.shields.io/cocoapods/l/LJNetwork.svg?style=flat)](http://cocoapods.org/pods/LJNetwork)
+[![Platform](https://img.shields.io/cocoapods/p/LJNetwork.svg?style=flat)](http://cocoapods.org/pods/LJNetwork)
 
-## TODO 
+## Example
 
-* OOP 添加面向协议
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Requirements
+
+## Installation
+
+LJNetwork is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "LJNetwork"
+```
+
+## Author
+
+manajay, manajay.dlj@gmail.com
+
+## License
+
+LJNetwork is available under the MIT license. See the LICENSE file for more info.
 
