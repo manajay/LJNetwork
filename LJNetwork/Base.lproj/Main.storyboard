@@ -22,19 +22,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" estimatedRowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pyu-82-8pX">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="gJ5-Wh-hJd"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="h7T-PU-in2"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圆通单号:887787795079291153" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufo-iB-3rF">
+                                <rect key="frame" x="0.0" y="30" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8wJ-jH-iwJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pyu-82-8pX" secondAttribute="trailing" id="2ud-2i-yIF"/>
-                            <constraint firstItem="Pyu-82-8pX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="4Cg-gz-N9M"/>
+                            <constraint firstItem="Pyu-82-8pX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="4Cg-gz-N9M"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pyu-82-8pX" secondAttribute="bottom" id="4Tw-az-6sq"/>
+                            <constraint firstItem="ufo-iB-3rF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PXa-g6-UdE"/>
+                            <constraint firstAttribute="trailing" secondItem="ufo-iB-3rF" secondAttribute="trailing" id="csd-Yf-MzW"/>
+                            <constraint firstItem="ufo-iB-3rF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="rCW-tX-qxZ"/>
                             <constraint firstItem="Pyu-82-8pX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tYf-kT-ikq"/>
                         </constraints>
                     </view>

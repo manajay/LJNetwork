@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				AE25EE681E09594400FEEC32 /* AppDelegate.swift */,
-				AEED1C0F1E6D484A00DAC807 /* Net */,
+				AEED1C0F1E6D484A00DAC807 /* LJNetwork */,
 				AE25EE821E09671100FEEC32 /* Demo */,
 				AE25EE6A1E09594400FEEC32 /* ViewController.swift */,
 				AE92C945204FA9F0009EFD98 /* ApiDemoRequest.swift */,
@@ -173,7 +173,7 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		AEED1C0F1E6D484A00DAC807 /* Net */ = {
+		AEED1C0F1E6D484A00DAC807 /* LJNetwork */ = {
 			isa = PBXGroup;
 			children = (
 				AE6A0CEE204FC09B002EEA2B /* Decoder */,
@@ -181,7 +181,7 @@
 				AE6A0CE9204FBFFD002EEA2B /* Utils */,
 				AE6A0CE7204FBF96002EEA2B /* Request */,
 			);
-			path = Net;
+			path = LJNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
