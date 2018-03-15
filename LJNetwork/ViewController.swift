@@ -30,15 +30,18 @@ extension ViewController {
 }
 
 extension ViewController {
+    
     fileprivate func sendReq() {
-        
         let req = ApiDemoRequest(type: Kuaidi.yuantong, postid: "887787795079291153");
-        Client.share.send(req, { [weak self] (express, status) in
-            toLog("code: \(status?.code ?? 0), express: \(express.debugDescription)")
-            self?.express = express
-            self?.expressList.reloadData()
-        }) { (error) in
-            toLog("error: \(error)")
+        Client.share.send(req) {[weak self] (message) in
+            switch message {
+            case .Failure(let error):
+                    toLog("error: \(error)")
+            case .Sucess(let express, let status):
+                    toLog("code: \(status?.code ?? 0), express: \(express.debugDescription)")
+                    self?.express = express
+                    self?.expressList.reloadData()
+            }
         }
     }
 }

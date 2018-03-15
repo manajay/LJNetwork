@@ -9,23 +9,23 @@
 import UIKit
 import Alamofire
 
-//typealias RawAndResponseSuccess<T: RequestType> = (_ success: T.Response?, _ status: T.Status?,_ rawData: Any) -> Void
+enum NetworkMessage <T: RequestType>{
+    case Sucess(response: T.Response?, status: T.Status?)
+    case Failure(error: Error)
+}
 
-typealias ResponseSuccess<T: RequestType> = (_ success: T.Response?, _ status: T.Status?) -> Void
-
-typealias ResponseFailure = (_ error: Error) -> Void
+typealias Handler<T: RequestType> = (_ message: NetworkMessage<T>) -> Void
 
 protocol ClientType {
     
     var manager: HttpManager? {get}
     
     //因为 Request 是含有关联类型的协议，所以它并不能作为独立的类型来使用，我们只能够将它作为类型约束，来限制输入参数 request
-    //    func send<T: RequestType>(_ r: T, success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
     @discardableResult
-    func send<T: RequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) -> JobRequest?
+    func send<T: RequestType>(_  req: T, _ moreInfo:@escaping  ((_ message: NetworkMessage<T>) -> Void)) -> JobRequest?
     
     
-    func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )
+    func upload<T: MultiUploadRequestType>(_  req: T, _  moreInfo: @escaping ((_ message: NetworkMessage<T>) -> Void))
     
 }
 
@@ -34,16 +34,16 @@ extension ClientType {
     weak var manager: HttpManager? {return HttpManager.share}
     
     @discardableResult
-    func send<T: RequestType>(_  req: T, _ success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) -> JobRequest?
+    func send<T: RequestType>(_  req: T, _ moreInfo: @escaping ((_ message: NetworkMessage<T>) -> Void)) -> JobRequest?
     {
         
-        return manager?.send(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), success: success, failure: failure)
+        return manager?.send(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), moreInfo)
     }
     
     
-    func upload<T: MultiUploadRequestType>(_  req: T, _  success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) {
+    func upload<T: MultiUploadRequestType>(_  req: T, _  moreInfo: @escaping ((_ message: NetworkMessage<T>) -> Void)) {
         
-        manager?.upload(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), success: success, failure: failure)
+        manager?.upload(req, request: ParaURLEncoding(destination: req.encodingDestination).buildRequest(req), moreInfo)
     }
     
 }

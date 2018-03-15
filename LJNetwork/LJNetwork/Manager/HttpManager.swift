@@ -158,11 +158,11 @@ extension HttpManager {
 extension HttpManager {
     
     @discardableResult
-    func send<T: RequestType >(_ req: T ,request: URLRequest ,success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure ) -> JobRequest?{
+    func send<T: RequestType >(_ req: T ,request: URLRequest , _ moreInfo: @escaping ((_ message: NetworkMessage<T>) -> Void)) -> JobRequest?{
         
         guard netStatus != .notReachable else {
             DispatchQueue.main.async {
-                failure(netError)
+                moreInfo(NetworkMessage.Failure(error: netError))
             }
             return nil
         }
@@ -192,14 +192,14 @@ extension HttpManager {
                 let error = response.result.error!
                 toLog(error)
                 DispatchQueue.main.async {
-                    failure(error)
+                    moreInfo(NetworkMessage.Failure(error: error))
                 }
                 return
             }
             
             //WARNING:   4G的时候 异步主线程回调 失败 , 直接略过了 黑人问号?
             DispatchQueue.main.async(execute: {
-                success(T.Response.parse(data: data),T.Status.parse(data: data))
+                moreInfo(NetworkMessage.Sucess(response: T.Response.parse(data: data), status: T.Status.parse(data: data)))
             })
             
 
@@ -211,11 +211,11 @@ extension HttpManager {
         return dataReq
     }
     
-    func upload<T: MultiUploadRequestType >(_ req: T ,request: URLRequest ,success: @escaping ResponseSuccess<T> , failure: @escaping ResponseFailure )  {
+    func upload<T: MultiUploadRequestType >(_ req: T ,request: URLRequest ,_ moreInfo: @escaping ((_ message: NetworkMessage<T>) -> Void))  {
         
         guard netStatus != .notReachable else {
             DispatchQueue.main.async {
-                failure(netError)
+                moreInfo(NetworkMessage.Failure(error: netError))
             }
             return
         }
@@ -229,14 +229,14 @@ extension HttpManager {
                 let error = response.result.error!
                 toLog(error)
                 DispatchQueue.main.async {
-                    failure(error)
+                    moreInfo(NetworkMessage.Failure(error: error))
                 }
                 return
             }
             
             //WARNING:   4G的时候 异步主线程回调 失败 , 直接略过了 黑人问号?
             DispatchQueue.main.async(execute: {
-                success(T.Response.parse(data: data),T.Status.parse(data: data))
+                moreInfo(NetworkMessage.Sucess(response: T.Response.parse(data: data), status: T.Status.parse(data: data)))
             })
             
         }
