@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
-import ReachabilitySwift
+import Reachability
 
 enum NetworkStatus:Int {
     case  unknown = -1 ;case notReachable = 0; case wwan = 1; case wifi = 2
@@ -78,7 +78,7 @@ extension HttpManager {
                 }
             }
         } else {
-            NotificationCenter.default.addObserver(self, selector: #selector(HttpManager.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: reachability)
+            NotificationCenter.default.addObserver(self, selector: #selector(HttpManager.reachabilityChanged(_:)), name: Notification.Name.reachabilityChanged, object: reachability)
         }
     }
     
@@ -92,7 +92,7 @@ extension HttpManager {
     
     func stopNotifier() {
         reachability?.stopNotifier()
-        NotificationCenter.default.removeObserver(self, name: ReachabilityChangedNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.reachabilityChanged, object: nil)
         reachability = nil
     }
     
