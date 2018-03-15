@@ -11,8 +11,8 @@ import SwiftyJSON
 import Alamofire
 import Reachability
 
-enum NetworkStatus:Int {
-    case  unknown = -1 ;case notReachable = 0; case wwan = 1; case wifi = 2
+enum NetworkStatus:UInt {
+    case notReachable = 0; case cellular = 1; case wifi = 2
 }
 
 enum MimeType:String {
@@ -25,11 +25,10 @@ let URL_ERROR = "地址错误"
 let NET_ERROR = "网络连接中断或出现错误"
 let NETWORK_UNAVAILABLE = "无网络连接"
 let DATA_ERROR = "网络数据出错"
-private let WWANAuthoriedKey = "WWANAuthoriedKey"
+private let AllowsCellularConnectionKey = "AllowsCellularConnectionKey"
 
 
 typealias JobRequest = DataRequest
-
 
 private let netError = NSError(domain: NSCocoaErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey : NETWORK_UNAVAILABLE])
 
@@ -47,7 +46,7 @@ class HttpManager {
     
     /***************************************************************/
     
-    var isWWANAuthoried = false
+    var allowsCellularConnection = false
     
     var debugStatus = false
     
@@ -97,12 +96,14 @@ extension HttpManager {
     }
     
     fileprivate func updateLabelColourWhenReachable(_ reachability: Reachability) {
-        if reachability.isReachableViaWiFi {
+        switch reachability.connection {
+        case .cellular:
+            netStatus = .cellular
+        case .wifi:
             netStatus = .wifi
-        } else {
-            netStatus = .wwan
+        default:
+            netStatus = .notReachable
         }
-        
     }
     
     fileprivate func updateLabelColourWhenNotReachable(_ reachability: Reachability) {
@@ -120,13 +121,13 @@ extension HttpManager {
         }
     }
     
-    fileprivate func initWwanNotification()  {
-        isWWANAuthoried = UserDefaults.standard.bool(forKey: WWANAuthoriedKey)
+    fileprivate func initcellularNotification()  {
+        allowsCellularConnection = UserDefaults.standard.bool(forKey: AllowsCellularConnectionKey)
     }
     
-    func resetWwanNotification(isAuthoried:Bool) {
-        isWWANAuthoried = isAuthoried
-        UserDefaults.standard.set(isAuthoried, forKey: WWANAuthoriedKey)
+    func resetcellularNotification(isAuthoried:Bool) {
+        allowsCellularConnection = isAuthoried
+        UserDefaults.standard.set(isAuthoried, forKey: AllowsCellularConnectionKey)
     }
     
     
