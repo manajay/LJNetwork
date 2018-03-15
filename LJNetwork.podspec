@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'LJNetwork'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary      	 = "An HTTP networking library"
   s.description      = "An HTTP networking library written in Swift"
   s.homepage         = 'https://github.com/manajay/LJNetwork'
