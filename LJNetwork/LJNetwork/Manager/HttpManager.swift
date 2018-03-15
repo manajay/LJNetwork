@@ -114,7 +114,7 @@ extension HttpManager {
     @objc fileprivate func reachabilityChanged(_ note: Notification) {
         
         let reachability = note.object as! Reachability
-        if reachability.isReachable {
+        if reachability.connection != .none {
             updateLabelColourWhenReachable(reachability)
         } else {
             updateLabelColourWhenNotReachable(reachability)
