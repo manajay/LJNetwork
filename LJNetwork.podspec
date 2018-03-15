@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.source_files = 'LJNetwork/LJNetwork/**/*'
   s.dependency 'Alamofire', '~> 4.7' 
-  s.dependency 'ReachabilitySwift', '~> 3' 
+  s.dependency 'ReachabilitySwift', '~> 4' 
   s.dependency 'SwiftyJSON' 
   s.dependency 'SVProgressHUD'
 end
